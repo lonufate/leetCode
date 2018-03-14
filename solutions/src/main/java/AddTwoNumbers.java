@@ -13,7 +13,39 @@
  */
 public class AddTwoNumbers {
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static void main(String[] args) {
+        ListNode root1 = new ListNode(((int) (Math.random() * 5)));
+        ListNode root2 = new ListNode(((int) (Math.random() * 5)));
+        ListNode l1 = root1;
+        ListNode l2 = root2;
+        for(int i = 0; i < Math.random()*5; i++){
+            l1.next = new ListNode(((int) (Math.random() * 10)));
+            l2.next = new ListNode(((int) (Math.random() * 10)));
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+
+        ListNode l3 = addTwoNumbers(root1, root2);
+
+        while (null != root1){
+            System.out.print(root1.val+"\t");
+            root1 = root1.next;
+        }
+        System.out.println();
+
+        while (null != root2){
+            System.out.print(root2.val+"\t");
+            root2 = root2.next;
+        }
+        System.out.println();
+
+        while (null != l3){
+            System.out.print(l3.val+"\t");
+            l3 = l3.next;
+        }
+    }
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);
         ListNode pointer = result;
 

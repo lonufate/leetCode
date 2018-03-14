@@ -16,28 +16,20 @@ public class LongestSubstrWithoutRepeatingCharacters {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input a string:");
         String s = scanner.next();
-        LongestSubstrWithoutRepeatingCharacters l = new LongestSubstrWithoutRepeatingCharacters();
-        System.out.println(l.lengthOfLongestSubstring(s));
+        System.out.println(lengthOfLongestSubstring(s));
     }
-    public int lengthOfLongestSubstring(String s) {
 
-        /*String candidate = "";
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = 0; j < candidate.length(); j++) {
-                if (s.charAt(i) == candidate.charAt(j)) {
-                    return Math.max(candidate.length(), lengthOfLongestSubstring(s.substring(j+1)));
-                }
+    public static int lengthOfLongestSubstring(String s) {
+        int max = 0;
+        for (int i = 0, j = 0; i < s.length(); i++) {
+            String sub = s.substring(j, i);
+            int k = sub.indexOf(s.charAt(i));
+            if (k > -1) {
+                j += k + 1;
             }
-            candidate += s.charAt(i);
+            max = Math.max(max, i - j + 1);
         }
-        return candidate.length();*/
 
-        int result = 0;
-        int start = 0;
-        int end = 0;
-        int cursor = 0;
-
-
-        return result;
+        return max;
     }
 }

@@ -14,8 +14,7 @@ public class LongestSubstrWithoutRepeatingCharactersTest {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input a string:");
         String s = scanner.next();
-        LongestSubstrWithoutRepeatingCharacters l = new LongestSubstrWithoutRepeatingCharacters();
-        System.out.println(l.lengthOfLongestSubstring(s));
+        System.out.println(LongestSubstrWithoutRepeatingCharacters.lengthOfLongestSubstring(s));
     }
 
 }
